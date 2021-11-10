@@ -1,0 +1,11 @@
+/*usamos el spread operador por ser un especie de funcion
+  mixin contiene elementos comunes y los usaremos en forma Global */
+
+
+@mixin transition($args...){
+    --webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}

@@ -1,0 +1,40 @@
+
+@import '../../style/sass/mixin';
+@import '../../style/sass/variables';
+
+.menuHeader{
+    background-color: $cartilla-colorBlanco;
+    box-shadow: 0px 5px 10px $cartilla-colorGris;
+    color:$cartilla-colorNaranjo;
+}
+
+.menu{
+    ul{
+        margin:6px 0;
+        li{ 
+            list-style:none;
+            display:inline-block;
+            margin-right: 40px;
+            &:hover {
+                text-decoration: none;
+            }
+            a{
+                color:$cartilla-colorNaranjo;
+                display:block;
+                padding: 2px 0;
+                position: relative;
+                &:after{
+                    position: absolute;
+                    background:red;
+                    content: "";
+                    left:0;
+                    bottom: 0;
+                    width: 100%;
+                    height:2px;
+                   -webkit-transform: scale(0);
+                   @include transition(all,0.5s)
+                }
+            }
+        }
+    }
+}
