@@ -10,13 +10,13 @@ export const getProductCategories = () => async (dispatch) => {
     .then((res) => {
       console.log("RESPUESTA de la API", res.data);
 
-      let parentCat = res.data.data.filter((x) => x.parentcategoryid === null);
+      let parentCat = res.data.filter((x) => x.parentcategoryid === null);
 
       parentCat.map((item) => {
         let t = {
           Id: item.id,
           Category: item.category,
-          SubCategory: res.data.data
+          SubCategory: res.data
             .filter((x) => x.parentcategoryid === item.id)
             .map((y) => {
               return {
@@ -45,7 +45,7 @@ export const getProducts = () => async (dispatch) => {
   })
     .then((res) => {
       try {
-        let productList = res.data.data.map((item) => {
+        let productList = res.data.map((item) => {
           return {
             Id: item.id,
             categoryId: item.categoryid,
